@@ -26,5 +26,6 @@ int main()
 	Problem<pair<int, int>>* problem = new Problem<pair<int, int>>(root,actions);
 	genericSearch(*problem,PrintSomething);
 	//genericSearch([]() { cout << "Hello again!" << endl; });
+	cout << "Hello" << endl;
 }
 
