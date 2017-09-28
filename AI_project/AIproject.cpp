@@ -7,9 +7,8 @@
 using namespace std;
 
 
-void genericSearch(Problem problem,function<void()> QingFunc) {
-	queue<Node> q;
-	q.push(problem.root);
+template <class stateType>
+void genericSearch(Problem<stateType> problem,function<void()> QingFunc) {
 	QingFunc();
 }
 
@@ -19,8 +18,12 @@ void PrintSomething() {
 
 int main()
 {
-	
-	Problem* problem = new Problem();
+	Node<pair<int, int>> root = {};
+	vector<string> actions;
+
+	// new keyword assign a space on the heap and
+	//all it can return is an address(so new = use pointer)
+	Problem<pair<int, int>>* problem = new Problem<pair<int, int>>(root,actions);
 	genericSearch(*problem,PrintSomething);
 	//genericSearch([]() { cout << "Hello again!" << endl; });
 }
