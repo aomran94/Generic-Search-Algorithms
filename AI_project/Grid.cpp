@@ -61,14 +61,31 @@ void Grid:: genGrid() {
 			}
 		}
 	                                              }
+}
+
+void Grid::printGrid() {
 	// Print the List , Visualize tl3t boolean 3nd omran , msh zy m7na fkreen enaha function bt print l current state of a map :@
+	char o = (char)178;
+	char r = (char)240;
+	char p1 = (char)169;
+	char p2 = (char)170;
+	char t1 = (char)175;
+	char t2 = (char)174;
 	for (int i = 0; i<this->gridCells.size(); i++) {
 		for (int j = 0; j<this->gridCells[i].size(); j++) {
-			cout << this->gridCells[i][j] << " ";
+			if (i == this->agentPositionX && j == this->agentPositionY)
+				cout << "x ";
+			else {
+				if (!this->gridCells[i][j]) cout << "..";
+				if (this->gridCells[i][j] == 1) cout << o << o;
+				if (this->gridCells[i][j] == 2) cout << r << r;
+				if (this->gridCells[i][j] == 3) cout << p1 << p2;
+				if (this->gridCells[i][j] == 4) cout << t1 << t2;
+			}
+			cout << "   ";
 		}
-		cout << "" << endl;
+		cout << endl << endl;
 	}
-	
 }
 
 Grid::Grid()
