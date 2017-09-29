@@ -10,6 +10,7 @@ public:
 	int agentPositionY;
 	int remainingPressurePads;
 	void genGrid();
+	void printGrid();
 	Grid();
 	~Grid();
 };
